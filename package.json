@@ -5,8 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js"
+    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
