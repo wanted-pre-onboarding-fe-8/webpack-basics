@@ -13,6 +13,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: '웹팩 | 기본 보일러플레이트',
+      favicon: paths.src + '/favicon.ico',
       template: paths.src + '/template.html',
       filename: 'index.html', // output file
     }),
