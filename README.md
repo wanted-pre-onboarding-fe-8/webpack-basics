@@ -21,6 +21,8 @@ yarn start
 ├── src
 │   ├── index.js
 │   └── template.html
+├── .babelrc
+├── .gitignore
 ├── README.md
 ├── package.json
 ├── webpack.config.js
