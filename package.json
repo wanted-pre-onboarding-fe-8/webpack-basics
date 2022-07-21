@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.config.js"
+    "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
