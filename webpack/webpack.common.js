@@ -1,25 +1,23 @@
-const path = require('path');
-const webpack = require('webpack');
+const paths = require('./paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    entry: paths.src + '/index.js',
   },
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: paths.build,
     filename: '[name].bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: '웹팩 | 기본 보일러플레이트',
-      template: path.resolve(__dirname, './src/template.html'), // template file
+      favicon: paths.src + '/favicon.ico',
+      template: paths.src + '/template.html',
       filename: 'index.html', // output file
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -29,15 +27,5 @@ module.exports = {
         use: ['babel-loader'],
       },
     ],
-  },
-  devServer: {
-    historyApiFallback: true,
-    static: {
-      directory: path.resolve(__dirname, './build'),
-    },
-    open: true,
-    compress: true,
-    hot: true,
-    port: 3000,
   },
 };
